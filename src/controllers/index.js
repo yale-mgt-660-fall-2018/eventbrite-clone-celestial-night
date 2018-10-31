@@ -5,7 +5,7 @@
 const bluebird = require('bluebird');
 const pgp = require('pg-promise')({ promiseLib: bluebird });
 
-db = pgp(process.env.TEST_DATABASE_URL);
+db = pgp(process.env.DATABASE_URL);
 
 async function index(ctx) {
     
