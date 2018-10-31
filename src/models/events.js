@@ -40,7 +40,7 @@ async function getByLocation(db, searchString) {
         SELECT * FROM events WHERE
         location ILIKE '%$1:value%'
     `;
-    return db.oneOrNone(stmt, [searchString]);
+    return db.manyOrNone(stmt, [searchString]);
 }
 
 module.exports = {
