@@ -5,9 +5,7 @@
 const bluebird = require('bluebird');
 const pgp = require('pg-promise')({ promiseLib: bluebird });
 
-db = pgp('postgres://dev_user:dev_pass@localhost:7000/dev_db');//GR: This must be Changed connections shoudl not be managed here. 
-
-
+db = pgp(process.env.TEST_DATABASE_URL);
 
 async function index(ctx) {
     
@@ -22,7 +20,7 @@ async function index(ctx) {
     }
     console.log(waysOfBeingAwesome);
     const template = 'index.njk';
-
+ 
     return ctx.render(template, { waysOfBeingAwesome });
 }
 
