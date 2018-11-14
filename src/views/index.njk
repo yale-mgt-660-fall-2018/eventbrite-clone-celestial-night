@@ -23,10 +23,13 @@
         Testing the enviroment v3. Group: celestial-night. List of all the events in New Haven: 
     </p>
     <div>
-        {% for way in waysOfBeingAwesome %}
-            <li>{{way}}</li>
+        {% for event in events %}
+            <li>{{event.title}}<br>
+            {{event.date}}
+            </li>
         {% endfor %}
-    </div>
+  
+    </div> <br>
   <a href='/events/new' id='new'>Create an event</a>
   </main>
   <footer>
