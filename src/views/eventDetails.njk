@@ -1,12 +1,24 @@
+
+
+<ul class="form-errors">
+
+{% for eventsError in eventsErrors %}
+            <li>{{eventsError}}</li>
+        {% endfor %}
+
+</ul>
+
 {% block header %}
 <h1 id=title>{{ eventTitle }}</h1>
 {% endblock %}
 
-{% block body %}
+{% for email in eventAttendees %}
+ <li>{{email}}</li>
+ {% endfor %}
 
+
+{% block body %}
 <form action="/rsvp/{{ eventId }}" method="post">
     <input type="email" id="email" name="email" />
     <button type="submit" class="btn" name="submit">Submit</button>
-
-
 {% endblock %}

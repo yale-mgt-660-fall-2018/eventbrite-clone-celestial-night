@@ -28,6 +28,16 @@ async function insertAttendee(db, mail, eventId) {
     return db.one(stmt, [mail, eventId]);
 }
 
+async function getAttendeeByEventId(db, eventId) {
+    // See pgpromise documentation for this ":value" syntax
+    // and why it is used.
+    const stmt = `
+        SELECT * FROM attendees WHERE
+        event_id ='$1:value'
+    `;
+    return db.manyOrNone(stmt, [eventId]);
+}
+
 
 /**
  * @param {Database} db - Pg-promise database object
@@ -71,4 +81,5 @@ module.exports = {
     getByLocation,
     getById,
     insertAttendee,
+    getAttendeeByEventId,
 };
