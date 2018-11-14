@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html>
+{% extends "_layout.njk" %}
 
 <head>
     <meta charset="utf-8">
@@ -21,6 +20,7 @@
 </head>
 
 <body>
+{% block content %}
     
     <form action="/about" method="post">
      <!-- Adding team name and images -->
@@ -40,6 +40,4 @@
     
     </form>
     
-</body>
-
-</html>
+{% endblock %}
