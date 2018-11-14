@@ -1,6 +1,5 @@
 -- Load up pycrypto so that we can do password hashing
-DROP EXTENSION IF EXISTS pgcrypto;
-CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 
 DROP TABLE IF EXISTS events CASCADE;
 CREATE TABLE IF NOT EXISTS events (
@@ -21,7 +20,9 @@ CREATE TABLE IF NOT EXISTS events (
         DEFAULT current_timestamp
 
 );
--- Turn on verbose error messages, which helps our JavaScript
--- code handle database errors in a graceful manner.
-SET log_error_verbosity TO 'verbose';
--- \set VERBOSITY verbose
+
+CREATE TABLE attendees (
+  email text NOT NULL, 
+  event_id INTEGER REFERENCES events(id) not null,
+  PRIMARY KEY (email,event_id)
+);

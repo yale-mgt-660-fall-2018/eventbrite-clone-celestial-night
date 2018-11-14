@@ -3,7 +3,7 @@ const indexControllers = require('../controllers/index.js');
 const aboutControllers = require('../controllers/about.js');
 const newEventControllers = require('../controllers/newEvent.js');
 const eventDetailsControllers = require('../controllers/eventDetails.js');
-
+const rsvpControllers = require('../controllers/rsvp.js');
 
 const router = new Router();
 router.get('/', indexControllers.index);
@@ -13,5 +13,5 @@ router.get('/events', eventDetailsControllers.eventDetails);
 //The line bellow allow us to hanlde URL having the event ID after the slash. 
 router.get('/events/:id', eventDetailsControllers.eventDetails);
 router.get('/about', aboutControllers.index);
-
+router.post('/rsvp/:id', rsvpControllers.attendeeRegistrationPost);
 module.exports = router;

@@ -18,6 +18,27 @@ async function insert(db, title, date, imageURL, location) {
     return db.one(stmt, [title, date, imageURL, location]);
 }
 
+
+async function insertAttendee(db, mail, eventId) {
+    const stmt = `
+        INSERT INTO attendees (email, event_id)
+        VALUES ($1, $2)
+        RETURNING email, event_id
+    `;
+    return db.one(stmt, [mail, eventId]);
+}
+
+async function getAttendeeByEventId(db, eventId) {
+    // See pgpromise documentation for this ":value" syntax
+    // and why it is used.
+    const stmt = `
+        SELECT * FROM attendees WHERE
+        event_id ='$1:value'
+    `;
+    return db.manyOrNone(stmt, [eventId]);
+}
+
+
 /**
  * @param {Database} db - Pg-promise database object
  * @returns {Promise} - Promise that resolves to and int
@@ -59,4 +80,6 @@ module.exports = {
     count,
     getByLocation,
     getById,
+    insertAttendee,
+    getAttendeeByEventId,
 };
