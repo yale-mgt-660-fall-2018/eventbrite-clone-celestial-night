@@ -18,6 +18,17 @@ async function insert(db, title, date, imageURL, location) {
     return db.one(stmt, [title, date, imageURL, location]);
 }
 
+
+async function insertAttendee(db, mail, eventId) {
+    const stmt = `
+        INSERT INTO attendees (email, event_id)
+        VALUES ($1, $2)
+        RETURNING email, event_id
+    `;
+    return db.one(stmt, [mail, eventId]);
+}
+
+
 /**
  * @param {Database} db - Pg-promise database object
  * @returns {Promise} - Promise that resolves to and int
@@ -59,4 +70,5 @@ module.exports = {
     count,
     getByLocation,
     getById,
+    insertAttendee,
 };
