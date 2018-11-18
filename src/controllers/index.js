@@ -5,12 +5,12 @@
 const bluebird = require('bluebird');
 const pgp = require('pg-promise')({ promiseLib: bluebird });
 
-db = pgp(process.env.DATABASE_URL);
+
 
 async function index(ctx) {
     
     const eventsModel = require('../models/events.js');
-    queryResult=await eventsModel.getByLocation(db,'NH');
+    queryResult=await eventsModel.getByLocation(ctx.db,'NH');
     console.log(queryResult); //Showing just New Haven. 
     const waysOfBeingAwesome= [];
 

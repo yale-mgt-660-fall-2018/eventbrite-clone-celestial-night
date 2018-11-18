@@ -5,7 +5,7 @@
 const bluebird = require('bluebird');
 const pgp = require('pg-promise')({ promiseLib: bluebird });
 
-db = pgp(process.env.DATABASE_URL);
+
 
 async function newEvent(ctx) {
     
@@ -95,7 +95,7 @@ An image that is not a valid URL
     console.log(ctx.request.body);
     const eventsModel = require('../models/events.js');
     const eventDate= postRequest.month +' '+ postRequest.day +','+postRequest.year+ ' '+postRequest.hour+':'+postRequest.minute;
-    queryResult=await eventsModel.insert(db,postRequest.title,eventDate,postRequest.image, postRequest.location);
+    queryResult=await eventsModel.insert(ctx.db,postRequest.title,eventDate,postRequest.image, postRequest.location);
     eventId=queryResult.id;
 
     ctx.redirect("/events/"+eventId);
