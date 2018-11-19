@@ -47,5 +47,8 @@
         "pg-promise": "^8.5.1",
         "supertest": "^3.3.0",
         "validator": "^10.8.0"
+    },
+    "jest": {
+      "modulePathIgnorePatterns": [".c9"]
     }
 }
