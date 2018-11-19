@@ -4,6 +4,7 @@ const aboutControllers = require('../controllers/about.js');
 const newEventControllers = require('../controllers/newEvent.js');
 const eventDetailsControllers = require('../controllers/eventDetails.js');
 const rsvpControllers = require('../controllers/rsvp.js');
+const donateControllers= require ('../controllers/donate.js');
 
 const router = new Router();
 router.get('/', indexControllers.index);
@@ -14,4 +15,5 @@ router.get('/events', eventDetailsControllers.eventDetails);
 router.get('/events/:id', eventDetailsControllers.eventDetails);
 router.get('/about', aboutControllers.index);
 router.post('/rsvp/:id', rsvpControllers.attendeeRegistrationPost);
+router.get('/donate', donateControllers.donate);
 module.exports = router;
