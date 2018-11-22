@@ -27,9 +27,11 @@
 {% endblock %}
 
 <div>
+
 {% block contributions %}
-  Want to contribute? <a onclick="ga('send', 'event', 'DonnationSupport', '{{ donateText }}'); href="/donate" id="donate">{{ donateText }}</a> now!
+  Want to contribute? <a href="/donate" id="donate"  onclick="ga('send', 'event', 'DonnationSupport', '{{ donateText }}');" >  {{ donateText }} </a>  Now!
 {% endblock %}
+
 </div>
 
 {% for email in eventAttendees %}
