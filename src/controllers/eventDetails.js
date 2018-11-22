@@ -54,7 +54,7 @@ async function eventDetails(ctx) {
   //  
     
 
-    console.log(eventTitle);
+    console.log(donateText);
     const template = 'eventDetails.njk';
     console.log('Get Request'+ getRequest);
     return ctx.render(template, { eventsErrors,eventTitle, eventId,eventAttendees,donateText});
