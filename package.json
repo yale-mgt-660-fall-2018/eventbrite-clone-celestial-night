@@ -49,6 +49,8 @@
         "validator": "^10.8.0"
     },
     "jest": {
-      "modulePathIgnorePatterns": [".c9"]
+        "modulePathIgnorePatterns": [
+            ".c9"
+        ]
     }
 }
