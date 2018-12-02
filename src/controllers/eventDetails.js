@@ -5,6 +5,7 @@
 const bluebird = require('bluebird');
 const pgp = require('pg-promise')({ promiseLib: bluebird });
 
+<<<<<<< HEAD
 
 var eventId='';
 
@@ -27,11 +28,19 @@ async function eventDetails(ctx) {
     eventsErrors=[];
     eventTitle= 'This is my event';
     var getRequest=ctx.params.id;
+=======
+db = pgp(process.env.DATABASE_URL);
+
+async function eventDetails(ctx) {
+    eventTitle= 'This is my event';
+    const getRequest=ctx.params.id;
+>>>>>>> fix conflicts
     console.log(getRequest); //Showing just New Haven. 
     const eventsModel = require('../models/events.js');
 
     if (getRequest!=null && getRequest!=''){
         //Here we Query The Event to get the detailed information (We serach using the ID of the event)
+<<<<<<< HEAD
         queryResult=await eventsModel.getById(ctx.db,getRequest);
         eventId=getRequest;
         //Here we get the title of the event. 
@@ -44,6 +53,13 @@ async function eventDetails(ctx) {
                 console.log(attendeesResult[i].email);
                 eventAttendees.push(attendeesResult[i].email);}
 
+=======
+        queryResult=await eventsModel.getById(db,getRequest);
+        
+        //Here we get the title of the event. 
+        if(queryResult!=null){
+            eventTitle=queryResult.title;
+>>>>>>> fix conflicts
         }
         else{
             eventTitle='This Event Does not exists';
@@ -54,10 +70,17 @@ async function eventDetails(ctx) {
   //  
     
 
+<<<<<<< HEAD
     console.log(donateText);
     const template = 'eventDetails.njk';
     console.log('Get Request'+ getRequest);
     return ctx.render(template, { eventsErrors,eventTitle, eventId,eventAttendees,donateText});
+=======
+    console.log(eventTitle);
+    const template = 'eventDetails.njk';
+ 
+    return ctx.render(template, { eventTitle });
+>>>>>>> fix conflicts
 }
 
 module.exports = {
