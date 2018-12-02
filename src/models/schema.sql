@@ -1,4 +1,3 @@
-
 -- Load up pycrypto so that we can do password hashing
 
 DROP TABLE IF EXISTS events CASCADE;
@@ -18,6 +17,7 @@ CREATE TABLE IF NOT EXISTS events (
     created_at TIMESTAMP WITH TIME ZONE
         NOT NULL
         DEFAULT current_timestamp
+
 );
 
 DROP TABLE IF EXISTS events attendees;
@@ -27,3 +27,8 @@ CREATE TABLE attendees (
   PRIMARY KEY (email,event_id)
 );
 
+CREATE TABLE attendees (
+  email text NOT NULL, 
+  event_id INTEGER REFERENCES events(id) not null,
+  PRIMARY KEY (email,event_id)
+);

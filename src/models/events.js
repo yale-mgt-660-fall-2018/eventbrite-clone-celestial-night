@@ -82,4 +82,5 @@ module.exports = {
     getById,
     insertAttendee,
     getAttendeeByEventId,
+
 };

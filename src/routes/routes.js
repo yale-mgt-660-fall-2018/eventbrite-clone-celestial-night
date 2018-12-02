@@ -4,7 +4,11 @@ const aboutControllers = require('../controllers/about.js');
 const newEventControllers = require('../controllers/newEvent.js');
 const eventDetailsControllers = require('../controllers/eventDetails.js');
 const rsvpControllers = require('../controllers/rsvp.js');
+<<<<<<< HEAD
 const donateControllers= require ('../controllers/donate.js');
+=======
+
+>>>>>>> Updating changes to SQL
 const router = new Router();
 
 router.get('/', indexControllers.index);
@@ -15,6 +19,9 @@ router.get('/events', eventDetailsControllers.eventDetails);
 router.get('/events/:id', eventDetailsControllers.eventDetails);
 router.get('/about', aboutControllers.index);
 router.post('/rsvp/:id', rsvpControllers.attendeeRegistrationPost);
+<<<<<<< HEAD
 router.get('/donate', donateControllers.donate);
 
+=======
+>>>>>>> Updating changes to SQL
 module.exports = router;

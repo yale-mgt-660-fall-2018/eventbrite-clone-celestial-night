@@ -30,11 +30,16 @@ async function eventDetails(ctx) {
     var getRequest=ctx.params.id;
 =======
 db = pgp(process.env.DATABASE_URL);
+var eventId='';
 
 async function eventDetails(ctx) {
     eventTitle= 'This is my event';
+<<<<<<< HEAD
     const getRequest=ctx.params.id;
 >>>>>>> fix conflicts
+=======
+    var getRequest=ctx.params.id;
+>>>>>>> Updating changes to SQL
     console.log(getRequest); //Showing just New Haven. 
     const eventsModel = require('../models/events.js');
 
@@ -55,7 +60,7 @@ async function eventDetails(ctx) {
 
 =======
         queryResult=await eventsModel.getById(db,getRequest);
-        
+        eventId=getRequest;
         //Here we get the title of the event. 
         if(queryResult!=null){
             eventTitle=queryResult.title;
@@ -78,9 +83,14 @@ async function eventDetails(ctx) {
 =======
     console.log(eventTitle);
     const template = 'eventDetails.njk';
+<<<<<<< HEAD
  
     return ctx.render(template, { eventTitle });
 >>>>>>> fix conflicts
+=======
+    console.log('Get Request'+ getRequest);
+    return ctx.render(template, { eventTitle, eventId});
+>>>>>>> Updating changes to SQL
 }
 
 module.exports = {

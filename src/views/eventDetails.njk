@@ -1,6 +1,7 @@
 {% block header %}
 <h1 id=title>{{ eventTitle }}</h1>
 {% endblock %}
+<<<<<<< HEAD
 {% extends "_layout.njk" %}
 
 {% block content %}
@@ -62,3 +63,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </body>
 {% endblock %}
+=======
+
+{% block body %}
+
+<form action="/rsvp/{{ eventId }}" method="post">
+    <input type="email" id="email" name="email" />
+    <button type="submit" class="btn" name="submit">Submit</button>
+
+
+{% endblock %}
+>>>>>>> Updating changes to SQL
