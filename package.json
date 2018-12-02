@@ -31,13 +31,8 @@
         "nodemon": "^1.18.7"
     },
     "dependencies": {
-<<<<<<< HEAD
         "bluebird": "^3.5.2",
         "koa": "^2.6.2",
-=======
-        "bluebird": "^3.5.3",
-        "koa": "^2.6.1",
->>>>>>> Update dependencies
         "koa-bodyparser": "^4.2.1",
         "koa-passport": "^4.1.1",
         "koa-router": "^7.4.0",
