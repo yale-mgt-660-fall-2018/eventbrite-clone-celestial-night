@@ -31,7 +31,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <main>
 
-    <title>Eventbrite Poor Clone by celestial-night .. more events comming soon </title>
+    <title>Event: Eventbrite Poor Clone by celestial-night .. more events comming soon </title>
 
     <h1>MGT 660 celestial-night first version using a Database!!!</h1>
 
@@ -39,12 +39,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Testing the enviroment v3. Group: celestial-night. List of all the events in New Haven: 
     </p>
     <div>
-
+        <ul>
         {% for event in events %}
             <li><a href="/events/{{event.id}}">{{event.title}}</a><br>
            <p class="indent">{{event.date}}</p></li>
-            
         {% endfor %}
+        </ul>
   
     </div> <br>
   <a href='/events/new' id='new'>Create an event</a>
