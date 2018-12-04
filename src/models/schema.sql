@@ -26,9 +26,3 @@ CREATE TABLE attendees (
   event_id INTEGER REFERENCES events(id) not null,
   PRIMARY KEY (email,event_id)
 );
-
-CREATE TABLE attendees (
-  email text NOT NULL, 
-  event_id INTEGER REFERENCES events(id) not null,
-  PRIMARY KEY (email,event_id)
-);

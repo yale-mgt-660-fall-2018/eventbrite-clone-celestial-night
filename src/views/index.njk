@@ -41,9 +41,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
 
         {% for event in events %}
-            <li><a href>{{event.title}}</a><br>
-            {{event.date}}
-            </li>
+            <li><a href="/events/{{event.id}}">{{event.title}}</a><br>
+           <p class="indent">{{event.date}}</p></li>
+            
         {% endfor %}
   
     </div> <br>
