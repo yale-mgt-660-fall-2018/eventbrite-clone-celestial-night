@@ -59,7 +59,6 @@ async function eventDetails(ctx) {
     }
   //  
     
-
     console.log(donateText);
     console.log(queryResult);
     const template = 'eventDetails.njk';

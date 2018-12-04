@@ -11,9 +11,10 @@ router.get('/', indexControllers.index);
 router.get('/events/new', newEventControllers.newEvent);
 router.post('/events/new', newEventControllers.newEventPost);
 router.get('/events', eventDetailsControllers.eventDetails);
-//The line bellow allow us to hanlde URL having the event ID after the slash. 
+//The line bellow allow us to handle URL having the event ID after the slash. 
 router.get('/events/:id', eventDetailsControllers.eventDetails);
 router.get('/about', aboutControllers.index);
 router.post('/rsvp/:id', rsvpControllers.attendeeRegistrationPost);
 router.get('/donate', donateControllers.donate);
+
 module.exports = router;
