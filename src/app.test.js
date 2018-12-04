@@ -21,4 +21,16 @@ describe('our app', () => {
         expect(response.status)
             .toBe(200);
     });
+
+    test('API is up', async () => {
+        const response = await request(app.callback())
+            .get('/api/events');
+
+        expect(response.status)
+            .toBe(200);
+    });
+
+
+
+
 });

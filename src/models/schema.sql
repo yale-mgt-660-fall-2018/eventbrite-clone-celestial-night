@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS events (
 
 );
 
-DROP TABLE IF EXISTS events attendees;
-CREATE TABLE attendees (
+DROP TABLE IF EXISTS attendees;
+CREATE TABLE IF NOT EXISTS attendees (
   email text NOT NULL, 
   event_id INTEGER REFERENCES events(id) not null,
   PRIMARY KEY (email,event_id)
