@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS events (
     -- 'date' is a reserved word in some SQL dialects.
     -- Here I quoted it to make sure it is interpreted
     -- as a column name.
-    "date" TIMESTAMP WITH TIME ZONE NOT NULL,
+    "date" TIMESTAMP NOT NULL,
     -- The 'image_url' must be a URL ending in png, gif.
     image_url TEXT NOT NULL
         CHECK ( image_url ~ '^https?://.*\.(png|gif)$' ),
