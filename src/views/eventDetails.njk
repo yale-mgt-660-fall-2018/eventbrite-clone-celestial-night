@@ -37,6 +37,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </ul>
 
+{% block header %}
+<h1 id=title> {{ eventTitle }} 
+<div>
+<span id ="location">  {{ eventLocation }}</span> 
+</div>
+<div>
+<span id ="date"> {{eventDate}} </span> 
+</div>
+<div>
+<span id ="image"><img src={{ eventImage }}><br></span>
+</div>
+</h1>
+{% endblock %}
 <div>
 
 {% block contributions %}

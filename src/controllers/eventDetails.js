@@ -26,6 +26,9 @@ async function eventDetails(ctx) {
     var eventAttendees=[];
     eventsErrors=[];
     eventTitle= 'This is my event';
+    var eventDate= ' ';
+    var eventLocation= ' ';
+    var eventImage='';
     var getRequest=ctx.params.id;
     console.log(getRequest); //Showing just New Haven. 
     const eventsModel = require('../models/events.js');
@@ -37,6 +40,9 @@ async function eventDetails(ctx) {
         //Here we get the title of the event. 
         if(queryResult!=null){
             eventTitle=queryResult.title;
+            eventLocation=queryResult.location;
+            eventDate=queryResult.date;
+            eventImage=queryResult.image_url;
             var donateText=randomTextDonation();
             attendeesResult=await eventsModel.getAttendeeByEventId(ctx.db,eventId);
             console.log(attendeesResult);
@@ -54,9 +60,11 @@ async function eventDetails(ctx) {
   //  
     
     console.log(donateText);
+    console.log(queryResult);
     const template = 'eventDetails.njk';
     console.log('Get Request'+ getRequest);
-    return ctx.render(template, { eventsErrors,eventTitle, eventId,eventAttendees,donateText});
+     console.log(queryResult);
+    return ctx.render(template, { event: queryResult, eventImage,eventDate,eventLocation, eventsErrors,eventTitle, eventId,eventAttendees,donateText});
 }
 
 module.exports = {
