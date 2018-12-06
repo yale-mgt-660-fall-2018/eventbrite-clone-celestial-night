@@ -2,20 +2,53 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+{% block dataLayer %}
+{% endblock %}
+
+{%block analytics %}
+        <!-- Google Tag Manager -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129298184-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-129298184-1');
+        </script>
+        <!-- End Google Tag Manager -->
+      
+
+{% endblock %}
+
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        
+{% block cssBlock %}      
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        
+{% endblock %}      
+
+
         <title>Schedulemulator {% block title %}{% endblock %}</title>
     </head>
+
     <body>
 
+{% block tagManager %}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KCPTQZR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{% endblock %}
+
         {% block content %}{% endblock %}
-   
+
+{% block footer %}
         <footer class="small text-center text-muted">
             <p>Just a no-surprises footer, people. Nothing to see here.<p>
         </footer>
+{% endblock %}
         
     </body>
 </html>
