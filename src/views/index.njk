@@ -15,7 +15,7 @@
     <div>
         <ul>
         {% for event in events %}
-            <li  class= "event"><a href="/events/{{event.id}}">{{event.title}}</a><br>
+            <li  class= "{{event}}" id = "{{event.id}}"><a id= "title" href="/events/{{event.id}}">{{event.title}}</a><br>
            <time>{{event.date}}</time></li>
         {% endfor %}
         </ul>
