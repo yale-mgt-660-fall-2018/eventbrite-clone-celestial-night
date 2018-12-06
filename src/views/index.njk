@@ -41,7 +41,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
         <ul>
         {% for event in events %}
-            <li  class= "{{event}}" id = "{{event.id}}"><a id= "title" href="/events/{{event.id}}">{{event.title}}</a><br>
+            <li class="event" id ="event-" time><a id= "title" href="/events/{{event.id}}">{{event.title}}</a><br>
            <time>{{event.date}}</time></li>
         {% endfor %}
         </ul>
