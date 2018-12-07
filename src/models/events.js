@@ -64,6 +64,17 @@ async function getByLocation(db, searchString) {
     return db.manyOrNone(stmt, [searchString]);
 }
 
+async function getByTitle(db, searchString) {
+    // See pgpromise documentation for this ":value" syntax
+    // and why it is used.
+    const stmt = `
+        SELECT * FROM events WHERE
+        title ILIKE '%$1:value%'
+    `;
+    return db.manyOrNone(stmt, [searchString]);
+}
+
+
 async function getAll(db, searchString) {
     // See pgpromise documentation for this ":value" syntax
     // and why it is used.
@@ -92,4 +103,5 @@ module.exports = {
     insertAttendee,
     getAttendeeByEventId,
     getAll,
+    getByTitle,
 };

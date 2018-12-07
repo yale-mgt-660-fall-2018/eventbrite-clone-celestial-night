@@ -57,7 +57,7 @@ describe('our app', () => {
             .toBe(200);
     });
 
-    test('JSON Response', async () => {
+    test('API JSON Response Format', async () => {
         const response = await request(app.callback())
             .get('/api/events');
 
@@ -67,10 +67,23 @@ describe('our app', () => {
     
     });
 
+    /*
+    test('API Keys', async () => {
+        const response = await request(app.callback())
+            .get('/api/events');
 
-    res.body.data[0].should.include.keys(
-        'id', 'name', 'genre', 'rating', 'explicit'
-      );
+        expect(response.body.events[0])
+            .include.keys(
+                'id', 'title', 'location', 'attendees', 'image', 'time'
+              );
+            /*response.body.events[0].should.include.keys(
+                'id', 'title', 'location', 'attendees', 'image', 'time'
+              );
+    
+    });  */
+
+
+
 
 
 
