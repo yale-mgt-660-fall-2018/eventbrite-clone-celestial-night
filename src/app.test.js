@@ -22,6 +22,33 @@ describe('our app', () => {
             .toBe(200);
     });
 
+    /* Missing Test for event detail */
+
+    test('new events is up', async () => {
+        const response = await request(app.callback())
+            .get('/events/new');
+
+        expect(response.status)
+            .toBe(200);
+    });
+
+
+    test('about route is up', async () => {
+        const response = await request(app.callback())
+            .get('/about');
+
+        expect(response.status)
+            .toBe(200);
+    });
+
+    test('donate is up', async () => {
+        const response = await request(app.callback())
+            .get('/donate');
+
+        expect(response.status)
+            .toBe(200);
+    });
+
     test('API is up', async () => {
         const response = await request(app.callback())
             .get('/api/events');
@@ -29,6 +56,22 @@ describe('our app', () => {
         expect(response.status)
             .toBe(200);
     });
+
+    test('JSON Response', async () => {
+        const response = await request(app.callback())
+            .get('/api/events');
+
+        expect(response.type)
+            .toEqual('application/json');
+            expect(response.status)
+    
+    });
+
+
+    res.body.data[0].should.include.keys(
+        'id', 'name', 'genre', 'rating', 'explicit'
+      );
+
 
 
 

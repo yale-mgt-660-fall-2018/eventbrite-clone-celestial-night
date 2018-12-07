@@ -7,11 +7,28 @@ const pgp = require('pg-promise')({ promiseLib: bluebird });
 
 async function index(ctx) {
     
+    const eventsModel = require('../models/events.js');
+    events=await eventsModel.getAll(ctx.db);
+    
+    for(i in events) {
+     
+     eventId=events[i].id ;
+     attendeesResult=await eventsModel.getAttendeeByEventId(ctx.db,eventId); 
+     console.log(attendeesResult);
+     events[i].attendees=attendeesResult; 
+    }
+
+    
     ctx.body = {
-        status: 'success',
-        message: 'hello, world!'
+        
+
+        
+        events
+        
+        
       };
  
+
     return ctx;
 }
 

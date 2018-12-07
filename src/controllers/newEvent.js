@@ -43,10 +43,13 @@ function is_image(str){
     }
     var lastword=str.substring(lastDot+1, str.length); 
     console.log(lastword);
+    lastword=lastword.toLowerCase();
     if(lastword=='jpg'||lastword=='png'||lastword=='gif'){
+        console.log('true')
         return true;
     }
 
+    console.log('false')
     return false
 }
 
