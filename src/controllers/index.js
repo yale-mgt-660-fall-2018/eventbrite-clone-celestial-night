@@ -6,8 +6,7 @@
 async function index(ctx) {
     
     const eventsModel = require('../models/events.js');
-    queryResult=await eventsModel.getByLocation(ctx.db,'NH');
-    console.log(queryResult); //Showing just New Haven. 
+
     const events = await eventsModel.getAll(ctx.db);
     const waysOfBeingAwesome= [];
 

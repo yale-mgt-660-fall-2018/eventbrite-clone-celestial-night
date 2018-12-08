@@ -4,7 +4,13 @@
 <h1 id=title>{{ eventTitle }}</h1>
 {% endblock %}
 
-{% block body %}
+{% block dataLayer %}
+<script>
+  dataLayer = [{
+    'supportdisplay': '{{ donateText }}'
+  }];
+</script>
+{% endblock %}
 
 {% block content %}
 
@@ -27,7 +33,6 @@
 <span id ="image"><img src={{ eventImage }}><br></span>
 </div>
 </h1>
-{% endblock %}
 <div>
 
 {% block contributions %}
@@ -45,5 +50,4 @@
     <input type="email" id="email" name="email" />
     <button type="submit" class="btn" name="submit">Submit</button>
 
-</body>
 {% endblock %}
