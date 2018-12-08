@@ -5,6 +5,25 @@
 const bluebird = require('bluebird');
 const pgp = require('pg-promise')({ promiseLib: bluebird });
 
+function validYaleEmail(emailString){
+    if (!validateEmail(emailString)){
+        return false;
+    }
+    
+    if (/@yale.edu\s*$/.test(emailString.toLowerCase())) {
+        console.log("it ends in @yale");
+        return true; 
+     } 
+
+     return false; 
+}
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+
 async function attendeeRegistrationPost(ctx) {
     
     const postRequest=ctx.request.body;
@@ -25,6 +44,12 @@ async function attendeeRegistrationPost(ctx) {
     if (getRequestId==null || getRequestId==''){
         insertIntoDatabase=false; 
         eventsErrors.push('No Event ID');}
+
+
+    if(!validYaleEmail(postRequest.email)){
+        insertIntoDatabase=false;
+        eventsErrors.push('This is not a valid Yale.edu Email');
+    }
 
     if(insertIntoDatabase){
     console.log(ctx.request.body);
