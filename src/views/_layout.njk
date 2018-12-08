@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+
 <html lang="en">
+    
     <head>
+        
         <meta charset="utf-8">
 {% block dataLayer %}
 {% endblock %}
@@ -29,9 +32,20 @@
 
 
         <title>Schedulemulator {% block title %}{% endblock %}</title>
+    
+        <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+        
+
+        
+        <img id="logo" src="http://som.yale.edu/sites/all/themes/common_assets/img/yalesom_shield-alt.svg" height="120" alt="logo" />
+        
+        <!-- Adding title for about page-->
+        <title>Team Celestial Night!!</title>
+        
     </head>
 
     <body>
+    
 
 {% block tagManager %}
 
@@ -49,6 +63,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p>Just a no-surprises footer, people. Nothing to see here.<p>
         </footer>
 {% endblock %}
+        
+        <div class = "navbar navbar-default navbar-fixed-bottom">
+            
+            <div class = "container">
+            <p class = "navbar-text pull-left">Site Built By Neil Rowe</p>
+            <a href = "https://www.youtube.com/watch?v=FavUpD_IjVY&t=50s" class = "navbar-btn btn-danger btn pull-right"</a>
+            </div>
+            
+        </div>    
         
     </body>
 </html>

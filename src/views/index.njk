@@ -3,10 +3,6 @@
 {% block content %}
 
 
-  <header>
-    <img id="logo" src="http://som.yale.edu/sites/all/themes/common_assets/img/yalesom_shield-alt.svg" height="120" alt="logo" />
-  </header>
-
   <main>
 
     <title>Event: Eventbrite Poor Clone by celestial-night .. more events comming soon </title>
@@ -19,8 +15,8 @@
     <div>
         <ul>
         {% for event in events %}
-            <li><a href="/events/{{event.id}}">{{event.title}}</a><br>
-           <p class="indent">{{event.date}}</p></li>
+            <li class="event" id ="event-" time><a id= "title" href="/events/{{event.id}}">{{event.title}}</a><br>
+           <time>{{event.date}}</time></li>
         {% endfor %}
         </ul>
   
