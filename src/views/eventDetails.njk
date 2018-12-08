@@ -30,7 +30,8 @@
 <span id ="date"> {{eventDate}} </span> 
 </div>
 <div>
-<span id ="image"><img src={{ eventImage }}><br></span>
+
+ <img src={{ eventImage }} alt="event image" id="image" />
 </div>
 </h1>
 <div>
@@ -41,12 +42,30 @@
 
 </div>
 
+
+{% if (email!=null) and (confCode!=null) %}
+  <div>
+    REGISTERED {{ email }}! Your confirmation code is <b>{{ confCode }}</b>
+  </div>
+{% endif %}
+
+
+
+
+<div>
+  Attendees:
+
+
+<ul class="list-group" id="attendees">
 {% for email in eventAttendees %}
- <li>{{email}}</li>
+ <li class="list-group-item">{{email}}</li>
  {% endfor %}
+</ul>
+
+</div>
 
 
-<form action="/rsvp/{{ eventId }}" method="post">
+<form action="/events/{{ eventId }}" method="post">
     <input type="email" id="email" name="email" />
     <button type="submit" class="btn" name="submit">Submit</button>
 
