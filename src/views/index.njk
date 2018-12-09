@@ -1,17 +1,28 @@
-{% extends "_layout.njk" %}
+    {% extends "_layout.njk" %}
 
-{% block content %}
-
-
-  <main>
-
-    <title>Event: Eventbrite Poor Clone by celestial-night .. more events comming soon </title>
-
-    <h1>MGT 660 celestial-night first version using a Database!!!</h1>
-
+    {% block content %}
+    <main>
+        
+    <!-- Jumbotron -->
+            
+            <div class=container>
+            <div class="jumbotron">
+                  <h1 class="display-4">Welcome to our appalling clone of Eventbrite!</h1>
+                  <p class="lead">This is our project for MGT660 class project prepared for our sensei Kyle Jensen</p>
+                  <hr class="my-4">
+                  <p>We totally encourage you to take this class! click the button if you are interested ;)</p>
+                  <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="https://github.com/yale-mgt-656-fall-2018/about" role="button">Click me!</a>
+                  </p>
+            </div>
+            </div>
+            
+            <!-- End Jumbotron -->    
+    <div class=container>
     <p>
-        Testing the enviroment v3. Group: celestial-night. List of all the events in New Haven: 
+        Come! and join to one of our WONDERFUL events: 
     </p>
+    
     <div>
         <ul>
         {% for event in events %}
@@ -21,9 +32,11 @@
         </ul>
   
     </div> <br>
-  <a href='/events/new' id='new'>Create an event</a>
-  </main>
+    
+    </div>
+    
+   </main>
 
 
-{% endblock %} 
+    {% endblock %} 
 
