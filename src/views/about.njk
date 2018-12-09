@@ -3,22 +3,41 @@
 
 {% block content %}
     
-    <form action="/about" method="post">
-     <!-- Adding team name and images -->
-
-    <span><h3>adorable-magpie</h3></span>
-    
-    <img src="https://media.licdn.com/dms/image/C5603AQHZOYxhDdR4yw/profile-displayphoto-shrink_800_800/0?e=1547078400&v=beta&t=NjziD7hyLRsd7BTrx7r0esQQ9i1DPizChpmgergSn4M" alt ="">
-    
-    <span id ="class-nickname-name"><h3>pleasant-jackal</h3></span>
-    <img src="https://media.licdn.com/dms/image/C4E03AQHwwoWwBeHROw/profile-displayphoto-shrink_800_800/0?e=1547078400&v=beta&t=xO0_SvLrG4NHJ0rxAo1RGF8bGEuecsXgDjSJ843eGMc" alt ="class-nickname-headshot" id ="class-nickname-headshot" ><br>
-
-    <span id ="class-nickname-name"><h3>misty-falcon</h3></span>
-    <img src="https://media.licdn.com/dms/image/C5603AQEFl6huMRmFCQ/profile-displayphoto-shrink_800_800/0?e=1547078400&v=beta&t=RmerCP9Cid-GeGLIqdcV4fP9OafsX-Q6wrynF4p3w1E" id ="class-nickname-headshot"><br>
-    
-    <span id ="class-nickname-name"><h3>cloudy-gazelle</h3></span>
-    <img src="https://media.licdn.com/dms/image/C4E03AQEZnmOeiyC4rw/profile-displayphoto-shrink_200_200/0?e=1547078400&v=beta&t=Vne6TAQU-92-fu3fNcpgZ99jNS3e1IVppRBAL9XFntg" alt ="class-nickname-headshot" id ="class-nickname-headshot"><br>
-    
-    </form>
+    <div class=container>
+                <div class="card-group">
+          <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <img class="card-img-top" src="https://media.licdn.com/dms/image/C5603AQHZOYxhDdR4yw/profile-displayphoto-shrink_800_800/0?e=1550102400&v=beta&t=i747eaJvZW26GOnjnmWgMNguZqD7kLYCwMIyr44GZ5Y" alt="Card image cap">
+            <div class="card-body">
+              <span id ="class-nickname-name"><h5 class="card-title">adorable-magpie</h5></span>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <img class="card-img-top" src="https://media.licdn.com/dms/image/C4E03AQHwwoWwBeHROw/profile-displayphoto-shrink_800_800/0?e=1547078400&v=beta&t=xO0_SvLrG4NHJ0rxAo1RGF8bGEuecsXgDjSJ843eGMc" alt="Card image cap">
+            <div class="card-body">
+              <span id ="class-nickname-name"><h5 class="card-title">pleasant-jackal</h5></span>
+              <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <img class="card-img-top" src="https://media.licdn.com/dms/image/C5603AQEFl6huMRmFCQ/profile-displayphoto-shrink_800_800/0?e=1547078400&v=beta&t=RmerCP9Cid-GeGLIqdcV4fP9OafsX-Q6wrynF4p3w1E" alt="Card image cap">
+            <div class="card-body">
+              <span id ="class-nickname-name"><h5 class="card-title">misty-falcon</h5></span>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+          <div class="card bg-light mb-3" style="max-width: 18rem;">
+            <img class="card-img-top" src="https://media.licdn.com/dms/image/C4E03AQE16d14D9kLIw/profile-displayphoto-shrink_800_800/0?e=1550102400&v=beta&t=w7y3cYpJQwSE7ul5NHG1bMp10uQP3QCLz4XjUIjCSxw" alt="Card image cap">
+            <div class="card-body">
+              <span id ="class-nickname-name"><h5 class="card-title">cloudy-gazelle</h5></span>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+        </div>
+    </div>
     
 {% endblock %}
